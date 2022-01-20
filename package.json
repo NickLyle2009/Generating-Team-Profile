@@ -1,0 +1,27 @@
+{
+  "name": "generating-team-profile",
+  "version": "1.0.0",
+  "description": "Generates team profile",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NickLyle2009/Generating-Team-Profile.git"
+  },
+  "author": "Nick Lyle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NickLyle2009/Generating-Team-Profile/issues"
+  },
+  "homepage": "https://github.com/NickLyle2009/Generating-Team-Profile#readme",
+  "dependencies": {
+    "inquire": "^0.4.8",
+    "jest": "^27.4.7"
+  }
+}
