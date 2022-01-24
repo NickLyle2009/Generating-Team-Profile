@@ -1,13 +1,11 @@
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown')
+const generateTeam = require('./src/generateTeam')
 const inquirer = require('inquirer')
 const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
-
 const teamMembers = []
 const idArr = []
-
 function Menu() {
     function createManager() {
         inquirer.prompt(
@@ -41,7 +39,7 @@ function Menu() {
             createTeam()
         })
     }
-    function createTeam() {
+    function createTeam(){
         inquirer.prompt({
             type: 'list',
             name: 'role',
