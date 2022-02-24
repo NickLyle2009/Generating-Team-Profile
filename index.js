@@ -1,19 +1,23 @@
 const fs = require('fs');
-const generateTeam = require('./src/generateTeam')
-const inquirer = require('inquirer')
+const generateTeam = require(`./src/generateTeam`)
+const path = require(`path`)
+const inquire = require('inquirer')
 const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 const teamMembers = []
 const idArr = []
+const outputDir = path.resolve(__dirname, `dist`)
+const outputPath = path.join(outputDir, `index.html`)
 function Menu() {
+   
     function createManager() {
-        inquirer.prompt(
+        inquire.prompt(
             [
                 {
                     type: 'input',
                     name: 'managerName',
-                    message: 'What is your name?'
+                    message: 'What is your name, or name of your manager?'
                 },
                 {
                     type: 'input',
@@ -40,7 +44,7 @@ function Menu() {
         })
     }
     function createTeam(){
-        inquirer.prompt({
+        inquire.prompt({
             type: 'list',
             name: 'role',
             message: 'What is your role in the company?',
@@ -60,7 +64,7 @@ function Menu() {
 
     }
     function addEngineer() {
-        inquirer.prompt(
+        inquire.prompt(
             [
                 {
                     type: 'input',
@@ -91,7 +95,7 @@ function Menu() {
         })
     }
     function addIntern() {
-        inquirer.prompt(
+        inquire.prompt(
             [
                 {
                     type: 'input',
@@ -125,8 +129,10 @@ function Menu() {
     }
     createManager()
 }
+console.log(generateTeam)
 function buildTeam() {
-    fs.writeFileSync('index.html', generateTeam(answers))
+    fs.writeFileSync(outputPath , generateTeam(teamMembers))
 }
+
 Menu()
 
